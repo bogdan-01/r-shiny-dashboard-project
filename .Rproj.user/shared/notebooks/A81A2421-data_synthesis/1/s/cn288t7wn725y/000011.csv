@@ -1,0 +1,3 @@
+"0","#plot 2 different graphs to compare raw vs synthesized data"
+"0","ggplot(ga_data_raw, aes(date, goal9Completions)) + "
+"0","         geom_line() "

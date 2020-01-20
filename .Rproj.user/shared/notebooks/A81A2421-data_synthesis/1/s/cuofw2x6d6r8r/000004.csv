@@ -1,0 +1,16 @@
+"0","#create"
+"0","ga_data_raw <- read_csv(""ga_data_raw.csv"")"
+"2","Parsed with column specification:
+cols(
+  date = [34mcol_date(format = """")[39m,
+  latitude = [32mcol_double()[39m,
+  longitude = [32mcol_double()[39m,
+  city = [31mcol_character()[39m,
+  sessions = [32mcol_double()[39m,
+  users = [32mcol_double()[39m,
+  goal2Completions = [32mcol_double()[39m,
+  goal3Completions = [32mcol_double()[39m,
+  goal5Completions = [32mcol_double()[39m,
+  goal9Completions = [32mcol_double()[39m
+)
+"

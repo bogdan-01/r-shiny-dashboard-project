@@ -1,0 +1,4 @@
+"0","#extract the dataset into a data frame"
+"0",""
+"0","synthesized_ga_data <- ga_data_syn$syn"
+"0",""

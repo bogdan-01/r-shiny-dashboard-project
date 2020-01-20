@@ -1,0 +1,2 @@
+"0","ggplot(synthesized_ga_data, aes(date, goal9Completions)) + "
+"0","         geom_line()"
