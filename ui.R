@@ -4,7 +4,7 @@ library(shinydashboard)
 library(lubridate)
 library(leaflet)
 
-# Define UI for application that draws a histogram
+# Define UI for application
 ui <- dashboardPage(
   dashboardHeader(title = tags$h4("Regional Performance Dashboard"),
                   titleWidth = 300),
@@ -48,22 +48,18 @@ ui <- dashboardPage(
                      separator = "to",
                      autoclose = TRUE
                    )
-                   ),
-                   
-                   fluidRow( 
-                     
-                     box(tags$img(src = "CodeClan_logo.png", height = 300, width = 300),
-                         background = "light-blue", height = 300, width = 12
-                         )
-                     )
+                   )
                    
   ),
   
   dashboardBody(
     ##top box for time series graph
     fluidRow(
-      box(title = "Regional Performance Time Series", width = 12, background = "blue", height = 300, 
-      plotlyOutput("time_series", height = "220px")
+      box(title = "Regional Performance Time Series", 
+          width = 12, 
+          background = "blue", 
+          height = 400, 
+      plotlyOutput("time_series", height = "320px")
     )
     ),
     
@@ -73,7 +69,11 @@ ui <- dashboardPage(
 
       fluidRow( 
 
-       box(title = "Time Series Totals",width = 12, height = 250, background = "light-blue", solidHeader = TRUE, 
+       box(title = "Time Series Totals", 
+           width = 12, 
+           height = 250, 
+           background = "light-blue", 
+           solidHeader = TRUE, 
       plotOutput("bar_graph", height = "175px"))),
       
       fluidRow(
@@ -105,8 +105,9 @@ ui <- dashboardPage(
     
       column(6, 
         
-      box(title = "Catchment map", width = 12, height = 500, background = "aqua", solidHeader = TRUE,
-          leafletOutput("catchment_map", height = "420px"))            
+      box(title = "Catchment map", width = 12, height = 550, background = "aqua", 
+          solidHeader = TRUE,
+          leafletOutput("catchment_map", height = "480px"))            
              )
     
     

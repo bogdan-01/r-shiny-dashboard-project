@@ -7,7 +7,7 @@ library(forcats)
 library(leaflet)
 
 
-# Define server logic required to draw a histogram
+# Define server logic
 shinyServer(function(input, output) {
   filtered_data <- reactive({
 
@@ -66,19 +66,18 @@ shinyServer(function(input, output) {
         ggplot() +
         aes_string(x = "date", y = input$metrics, colour = "scottish_city") + 
         geom_line() + 
-        scale_color_codeclan(reverse = TRUE) + 
+        scale_color_company(reverse = TRUE) + 
         theme_minimal()
       
       ggplotly(time_series)
       }
       
       else {
-        #browser()
         time_series_ra <- filtered_data() %>%
           ggplot() + 
           aes_string(x = "date", y = "weekly_rolling_avg", colour = "scottish_city") +
           geom_line() + 
-            scale_color_codeclan(reverse = TRUE) + 
+            scale_color_company(reverse = TRUE) + 
             theme_minimal()
           
           ggplotly(time_series_ra)
@@ -106,7 +105,7 @@ shinyServer(function(input, output) {
       ))  +
       theme_minimal() + 
       theme(legend.position = "none") +
-      scale_fill_codeclan()
+      scale_fill_company()
   })
 
 
@@ -124,7 +123,7 @@ output$targets_graph <- renderPlot({
     geom_col(position = "dodge") +
     theme_minimal() +
     coord_flip() +
-    scale_fill_codeclan(reverse = TRUE)
+    scale_fill_company(reverse = TRUE)
   
   if (input$metrics %in% c("total_da_apps", "total_prog_apps")) {
     targets_plot + 
